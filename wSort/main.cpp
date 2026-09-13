@@ -29,14 +29,14 @@ int main()
     };
    
     
-    chrono::steady_clock::time_point start;
-    chrono::steady_clock::time_point end;
-    chrono::duration<double, milli> time;
+    //chrono::steady_clock::time_point start;
+    //chrono::steady_clock::time_point end;
+    //chrono::duration<double, milli> time;
 
-    start = chrono::high_resolution_clock::now();
+    auto start = chrono::high_resolution_clock::now();
     Sort(list1);
-    end = chrono::high_resolution_clock::now();
-    time = end - start;
+    auto end = chrono::high_resolution_clock::now();
+    auto time = end - start;
     cout << "Insertion Sort: " << time.count() << "ms" << std::endl;
     cout << "=====================================" << std::endl;
     start = chrono::high_resolution_clock::now();

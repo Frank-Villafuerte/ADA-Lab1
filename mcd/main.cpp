@@ -75,17 +75,17 @@ int main()
     int a[] = { 144,102334155,1048576,16,9,0,4 };
     int b[] = { 12,165580141,2097152,7,48,0,0 };
     int size = 7;
-    chrono::steady_clock::time_point start;
-    chrono::steady_clock::time_point end;
-    chrono::duration<double, milli> time;
+    //chrono::steady_clock::time_point start;
+    //chrono::steady_clock::time_point end;
+    //chrono::duration<double, milli> time;
 
     for (int i = 0;i < size;i++)
     {
         cout << "a:" << a[i] << ",b:" << b[i] << std::endl;
-        start = chrono::high_resolution_clock::now();
+        auto start = chrono::high_resolution_clock::now();
         EuclidesMCD(a[i], b[i]);
-        end = chrono::high_resolution_clock::now();
-        time = end - start;
+        auto end = chrono::high_resolution_clock::now();
+        auto time = end - start;
         cout << "Euclides: " << time.count() << "ms "<< std::endl;
 
         start = chrono::high_resolution_clock::now();

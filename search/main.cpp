@@ -88,14 +88,14 @@ int main()
     Split(wordList, text);//almacenar las palabras en lista
     Sort(wordList);//ordenar palabras
 
-    chrono::steady_clock::time_point start;
-    chrono::steady_clock::time_point end;
-    chrono::duration<double, milli> time;
+    //chrono::steady_clock::time_point start;
+    //chrono::steady_clock::time_point end;
+    //chrono::duration<double, milli> time;
     cout << "Palabra:" << word1 << endl;
-    start = chrono::high_resolution_clock::now();
+    auto start = chrono::high_resolution_clock::now();
     SearchList(wordList, word1);
-    end = chrono::high_resolution_clock::now();
-    time = end - start;
+    auto end = chrono::high_resolution_clock::now();
+    auto time = end - start;
     cout << "List: " << time.count() << "ms " << std::endl;
 
     start = chrono::high_resolution_clock::now();
